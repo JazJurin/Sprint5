@@ -1,4 +1,4 @@
-
+const reportAcudits = [];
 
 function mostrarChiste() {
     const opcion = {
@@ -12,5 +12,19 @@ function mostrarChiste() {
     .then (response => {
         const chiste = document.getElementById("chiste");
         chiste.textContent = response.joke;
+        const votacion = document.getElementById("votacion");
+        votacion.classList.remove("d-none");
     });
+}
+
+function votarChiste(puntuacion) {
+    const fecha = new Date().toISOString();
+    const report = {
+        broma: chiste, 
+        puntuacion: puntuacion,
+        fecha: fecha
+    };
+    reportAcudits.push(report);
+    console.log(reportAcudits);
+    mostrarChiste();
 }
