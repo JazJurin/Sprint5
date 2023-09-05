@@ -28,3 +28,6 @@ function votarChiste(puntuacion) {
     console.log(reportAcudits);
     mostrarChiste();
 }
+
+
+
